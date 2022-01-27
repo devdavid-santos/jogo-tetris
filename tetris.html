@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris JS - Tetris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+
+        <div class="brand-logo">
+            <a href="index.html" aria-label="Retorno para a pagina inicial"><h2>Tetris</h2></a>
+        </div>
+
+        <a href="#" class="toggle-btn">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </a>
+
+        <div class="navbar-links">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="instructions.html">Instruções</a></li>
+                <li><a href="tetris.html" class="active">Jogar Tetris</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <section class="gameArea">
+        <h2 hidden>área de grid do jogo</h2>
+        <div class="panels">
+            <div class="box sidebox1">
+                <div class="box-content">
+                    <div class="score un-btn">Pontos: <span id="score">0</span></div>
+                    <div class="score un-btn">Linhas: <span id="lines">0</span></div>
+                    <div class="score un-btn">Level: <span id="levels">0</span></div>
+                    <button class="score btn" id="play">Musica Off</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-content">
+                <div class="grid">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="taken"></div>
+                        <div class="taken"></div>
+                        <div class="taken"></div>
+                        <div class="taken"></div>
+                        <div class="taken"></div>
+                        <div class="taken"></div>
+                        <div class="taken"></div>
+                        <div class="taken"></div>
+                        <div class="taken"></div>
+                        <div class="taken"></div>
+                </div>
+            </div>
+        </div>
+        <div class="box sidebox2">
+            <div class="box-content">
+                <div class="controls">
+                    <span class="keys"><button id="rotate" class="control-btn " aria-label="this button will Rotate the Tetrimino by 90 degrees">Girar</button></span>
+                        <span class="keys"><button id="left" class="control-btn " aria-label="this button will move the Tetrimino to the Left">Esquerda</button></span>
+                        <span class="keys"><button id="right" class="control-btn " aria-label="this button will move the Tetrimino to the Right">Direita</button></span>
+                        <span class="keys"><button id="down" class="control-btn " aria-label="this button is will move the Tetrimino Down the game grid">Baixo</button></span>
+                    </div>
+                    <button id="start-button" class="btn " aria-label="this button will start and pause the game">Start Game</button>
+                </div>
+            </div>
+        </div>
+
+        <audio src="./musica/musica-tetris.mp3"  id="smusic" aria-label="Musica contagiante do tetris" >If you are seeing this, it is because your browser does not support this audio element</audio>
+
+        <script src="./main.js"></script>
+        <script src="https://kit.fontawesome.com/0fb38816a1.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Assistant:wght@300;400;500;600;700;800&family=Rammetto+One&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    font-family: 'Assistant',sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("./imagens/fundo-tetris.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    padding-right: 10px;
+}
+
+.brand-logo{
+    font-family: 'Rammetto One',sans-serif;
+    font-size: 1.25rem;
+    margin: 0;
+    padding: .55rem;
+    text-align: center;
+    color: #1f0322;
+}
+
+.brand-logo a {
+    text-decoration: none;
+}
+
+.navbar-links ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li{
+    list-style: none;
+}
+
+.navbar-links a{
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+    display: block;
+}
+
+.navbar-links li:hover{
+    background: url("./imagens/fundo-tetris.jpg");
+    border-radius: 10px;
+}
+
+.navbar-links .active{
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 30px;
+}
+
+.toggle-btn .line{
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 400px) {
+    .toggle-btn {
+        display: flex;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+.main-bg{
+    background: url("./imagens/background-principal.jpg");
+    height: 97vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.about-bg{
+    background: url("./imagens/tetris_instruções.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.score-bg{
+    background:url("./imagens/blue-cube.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.title{
+    font-family: 'Rammetto One',sans-serif;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.title h1{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #1f0322;
+}
+
+.title h2::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 10rem;
+    margin: .25rem auto;
+    background-color: blueviolet;
+    box-sizing: 0px 2px 8px 0 red;
+}
+
+.title p{
+    font-family: "Assistant",sans-serif;
+    font-size: 1.25rem;
+    margin: 0 auto;
+    padding: .5rem;
+}
+
+.headings{
+    font-weight: bold;
+}
+
+.links a {
+    font-family: "Assistant",sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    text-align: center;
+    justify-content: center;
+    display: block;
+}
+
+.panels{
+    margin: 0 1rem;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    grid-gap: 12px;
+    justify-content: center;
+    align-items: center;
+    /*background-color: #03011e;*/
+}
+
+.box{
+    height: 460px;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    position: relative;
+    border-radius: 5px;
+}
+
+.sidebox1{
+    height: 320px;
+}
+
+.sidebox2{
+    height: 250px;
+}
+
+.box-content {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.box-content h2 {
+    color: #c24cf6;
+    visibility: hidden;
+}
+
+.buttons{
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn{
+    width: 20ch;
+    font-family: 'Assistant',sans-serif;
+    font-size: 1.12rem;
+    font-weight: bold;
+    background-color: #03011e;
+    border: 2px solid #847655;
+    color: #fc6e22;
+    padding: 1rem;
+    margin: .5rem auto;
+    border-radius: 10px;
+    justify-content: space-between;
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+}
+
+.controls{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.controls-btn{
+    max-width: 40ch;
+    font-family: 'Assistant',sans-serif;
+    font-size: 1.12rem;
+    font-weight: bold;
+    display: inline-block;
+    background-color: #03011e;
+    border: 2px solid #847655;
+    color: #fc6e22;
+    padding: .5rem;
+    margin: .25rem 1rem;
+    border-radius: 10px;
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+}
+
+.un-btn{
+    width: 20ch;
+    font-family: 'Assistant',sans-serif;
+    font-size: 1.12rem;
+    font-weight: bold;
+    background-color: #03011e;
+    border: 2px solid #847655;
+    color: #fc6e22;
+    padding: 1rem;
+    margin: .5re auto;
+    border-radius: 10px;
+    justify-content: space-between;
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background: #847655;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn[disabled]:hover{
+    cursor: not-allowed;
+    transform: none;
+}
+
+.controls-btn:hover{
+    background: #847655;
+    color: #fff;
+    cursor: pointer;
+}
+
+.music{
+    padding: 1rem;
+    margin: .5rem auto;
+    justify-content: space-between;
+}
