@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url("./imagens/orange-tetrimino.png");
+    background-image: url("../img/orange-tetrimino.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -52,7 +52,7 @@
 }
 
 .navbar-links li:hover{
-    background: url("./imagens/fundo-tetris.jpg");
+    background: url("../img/fundo-tetris.jpg");
     border-radius: 10px;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .main-bg{
-    background: url("./imagens/background-principal.jpg");
+    background: url("../img/background-principal.jpg");
     height: 97vh;
     background-repeat: no-repeat;
     background-position: center;
@@ -118,7 +118,7 @@
 }
 
 .about-bg{
-    background: url("./imagens/tetris_instruções.jpg");
+    background: url("../img/tetris_instruções.jpg");
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -126,7 +126,7 @@
 }
 
 .score-bg{
-    background:url("./imagens/blueCube.jpg");
+    background:url("../img/blueCube.jpg");
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
