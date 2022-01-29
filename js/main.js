@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    
     const toggle = document.getElementsByClassName('toggle-btn')[0];
 
     const navbar = document.getElementsByClassName('navbar-links')[0];
@@ -34,8 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const soundButton = document.getElementById('play');
 
     let nextRandom = 0;
-
-
 
     const colours = [
 
@@ -88,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
     const pTetrimino = [
 
         [2, 1, width + 1, width * 2 + 1],
@@ -100,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         [0, width, width + 1, width + 2]
 
     ];
-
 
 
     const qTetrimino = [
@@ -116,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
 
-
     const sTetrimino = [
 
         [width * 2, width * 2 + 1, width + 1, width + 2],
@@ -128,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
         [width * 2 + 2, width + 2, width + 1, 1]
 
     ];
+
+
     const zTetrimino = [
 
         [width, width + 1, width * 2 + 1, width * 2 + 2],
@@ -139,6 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
         [width * 2 + 1, width + 1, width + 2, 2]
 
     ];
+
+
     const tTetrimino = [
 
         [1, width, width + 1, width + 2],
@@ -148,7 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
         [width * 2 + 1, width, width + 1, width + 2],
 
         [width, 1, width + 1, width * 2 + 1]
+
     ];
+
+
     const bTetrimino = [
 
         [0, 1, width, width + 1],
@@ -160,6 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
         [width, width + 1, width * 2, width * 2 + 1]
 
     ];
+
+
     const iTetrimino = [
 
         [1, width + 1, width * 2 + 1, width * 3 + 1],
@@ -171,9 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
         [width * 2, width * 2 + 1, width * 2 + 2, width * 2 + 3]
 
     ];
+
+
+
     const theTetriminos = [pTetrimino, qTetrimino, sTetrimino, zTetrimino, tTetrimino, bTetrimino, iTetrimino];
 
-    console.log(theTetriminos[0][0]);
+    console.log(theTetriminos[0][0]); 
 
 
     let currentPosition = 4;
@@ -183,12 +189,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(currentPosition, currentRotation);
 
 
-
     let random = Math.floor(Math.random() * theTetriminos.length);
 
     let current = theTetriminos[random][currentRotation];
 
-    console.log(current); 
+    console.log(current);
 
 
     function draw() {
@@ -233,7 +238,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             timerId = setInterval(moveDown, 1000);
 
-            startButton.innerHTML = 'Started';
+            startButton.innerHTML = 'Started'; 
+
             nextRandom = Math.floor(Math.random() * theTetriminos.length);
 
         }
@@ -285,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         undraw();
 
-        const leftEdge = current.some(index => (currentPosition + index) % width === 0);
+        const leftEdge = current.some(index => (currentPosition + index) % width === 0); //check to make sure the tetrimino does not exceed the left edge
 
         if (!leftEdge) currentPosition -= 1;
 
@@ -300,9 +306,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+
     function control(event) {
 
-        event.preventDefault(); 
+        event.preventDefault();
 
         if (event.keyCode === 37) {
 
@@ -336,6 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const downButton = document.getElementById('down');
 
+
+
     leftButton.addEventListener('click', () => {
 
         moveLeft();
@@ -365,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         undraw();
 
-        const rightEdge = current.some(index => (currentPosition + index) % width === width - 1);
+        const rightEdge = current.some(index => (currentPosition + index) % width === width - 1); 
 
         if (!rightEdge) currentPosition += 1;
 
@@ -382,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function turnShape() {
 
-        undraw();  
+        undraw(); 
 
         currentRotation++; 
 
@@ -395,7 +404,6 @@ document.addEventListener('DOMContentLoaded', () => {
         current = theTetriminos[random][currentRotation];
 
         draw(); 
-
     }
 
     const playerName = document.getElementById('playerName');
@@ -408,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-    finalScore.innerText = mostRecentScore ;
+    finalScore.innerText = mostRecentScore;
 
 
 
@@ -418,11 +426,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+
+
     saveScore = (e) => {
 
         e.preventDefault();
-
-
 
         const score = {
 
@@ -440,10 +448,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         localStorage.setItem('highScores', JSON.stringify(highScores)); 
-
         window.location.assign( ' / '); 
 
     };
+
+ 
 
     function addScore() {
 
@@ -451,13 +460,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
 
+
             if (row.every(index => blox[index].classList.contains('taken'))) {
 
                 score += 15; 
-
                 playerScore.innerHTML = score;
 
-                lines += 1;
+                lines += 1; 
 
                 gameLine.innerHTML = lines; {
 
@@ -474,6 +483,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                 }
+
 
                 row.forEach(index => {
 
@@ -497,6 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+
     function gameOver() {
 
         if (current.some(index => blox[currentPosition + index].classList.contains('taken'))) { 
@@ -509,14 +520,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             startButton.style.color = 'white';
 
-            startButton.disabled = true;
+            startButton.disabled = true; 
 
             localStorage.setItem("mostRecentScore", score);
 
+           
             return window.location.assign("index.html"); 
+
         }
 
     }
+
 
     function validateForm() {
 
@@ -529,7 +543,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
 
          }
+
+         
     }
 
     validateForm();
+
 });

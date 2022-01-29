@@ -184,7 +184,6 @@
     grid-gap: 12px;
     justify-content: center;
     align-items: center;
-    /*background-color: #03011e;*/
 }
 
 .box{
@@ -243,7 +242,7 @@
     margin: 0 auto;
 }
 
-.controls-btn{
+.control-btn{
     max-width: 40ch;
     font-family: 'Assistant',sans-serif;
     font-size: 1.12rem;
@@ -286,7 +285,7 @@
     transform: none;
 }
 
-.controls-btn:hover{
+.control-btn:hover{
     background: #847655;
     color: #fff;
     cursor: pointer;
